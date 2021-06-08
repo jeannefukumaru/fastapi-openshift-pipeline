@@ -19,27 +19,27 @@ pipeline {
                 git branch: "${GIT_BRANCH}", url: "${GIT_REPO}"
             }
         }
-        stage ("Install Dependencies") {
-            steps {
-                sh """
-                pip install virtualenv
-                virtualenv .
-                source bin/activate
-                pip install -r app/requirements.pip
-                deactivate
-                """
-            }
-        }
-        stage('Run Tests') {
-            steps {
-                sh '''
-                source bin/activate
-                nosetests app --with-xunit
-                deactivate
-                '''
-                junit "nosetests.xml"
-            }
-        }
+        // stage ("Install Dependencies") {
+        //     steps {
+        //         sh """
+        //         pip install virtualenv
+        //         virtualenv .
+        //         source bin/activate
+        //         pip install -r app/requirements.pip
+        //         deactivate
+        //         """
+        //     }
+        // }
+        // stage('Run Tests') {
+        //     steps {
+        //         sh '''
+        //         source bin/activate
+        //         nosetests app --with-xunit
+        //         deactivate
+        //         '''
+        //         junit "nosetests.xml"
+        //     }
+        // }
         stage('Store Artifact'){
             steps{
                 script{
