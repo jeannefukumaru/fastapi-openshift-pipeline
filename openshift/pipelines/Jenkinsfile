@@ -73,7 +73,7 @@ pipeline {
             script {
                 openshift.withCluster() {
                     openshift.withProject(DEV_PROJECT) {
-                        openshift.newBuild("--name=${TEMPLATE_NAME}", "--docker-image=docker.io/tiangolo/uvicorn-gunicorn-fastapi:python3.7", "--binary=true")
+                        openshift.newBuild("--name=${TEMPLATE_NAME}", "--docker-image=uvicorn-gunicorn-fastapi:python3.7", "--binary=true")
                         }
                     }
                 }
