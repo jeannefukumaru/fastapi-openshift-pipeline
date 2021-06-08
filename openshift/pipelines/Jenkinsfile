@@ -4,8 +4,8 @@ pipeline {
     }
     environment {
         APPLICATION_NAME = 'python-fastapi'
-        GIT_REPO="https://github.com/jeannefukumaru/openshift-python-pipeline.git"
-        GIT_BRANCH="master"
+        GIT_REPO="https://github.com/jeannefukumaru/fastapi-openshift-pipeline.git"
+        GIT_BRANCH="main"
         STAGE_TAG = "promoteToQA"
         DEV_PROJECT = "dev"
         STAGE_PROJECT = "stage"
